@@ -9,6 +9,9 @@ executors:
     working_directory: ~/project
     docker:
       - image: corporater/install4j-builder:openjdk8-maven-3.6.1
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     environment:
       # Customize the JVM maximum heap limit
       MAVEN_OPTS: -Xmx3200m
